@@ -12,3 +12,8 @@ export default function ProtectedRoute({ children }) {
   // If token exists, render the protected component
   return children;
 }
+
+
+
+
+  
