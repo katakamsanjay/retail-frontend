@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { useState } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -14,8 +14,8 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
-              <Dashboard />
+            <ProtectedRoute user={user}>
+              <Dashboard user={user} />
             </ProtectedRoute>
           }
         />
